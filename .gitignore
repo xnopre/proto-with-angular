@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+.tmp
+/app/lib
+/node_modules/
+/app/js/constants.js
+/docs/
+/www/

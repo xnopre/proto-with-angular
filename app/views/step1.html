@@ -1,0 +1,55 @@
+<h1 class='text-center'>Bienvenue sur l'Outil d'Orientation Retraite</h1>
+
+<h2 class='info'>
+    Vous connaissez votre date de départ en retraite <br>
+    et souhaitez commencer vos démarches ? 
+
+<h2 class='info'>
+    Obtenez en quelques clics la liste personnalisée <br>
+    de vos démarches de retraite.
+</h2>
+
+<form ng-submit='nextStep()'>
+
+    <div class='form-group row'>
+        <label for='nom' class='col-sm-4 control-label'>Nom de famille :</label>
+        <div class='col-sm-8'>
+            <input type='text' ng-model='nom' class='form-control' id='nom' name='nom' required />
+        </div>
+    </div>
+
+    <div class='form-group row'>
+        <label for='nom' class='col-sm-4 control-label'>Date de naissance :</label>
+        <div class='col-sm-8'>
+            <select name='naissance.jour' class='form-control proto-select' required >
+                <option ng-repeat='jour in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]'>{{jour}}</option>
+            </select>
+            <select name='naissance.mois' class='form-control proto-select' required >
+                <option ng-repeat='mois in listeMois'>{{mois}}</option>
+            </select>
+            <select name='naissance.annee' class='form-control proto-select' required >
+                <option ng-repeat='annee in listeAnneesNaissance'>{{annee}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class='form-group row'>
+        <label for='nom' class='col-sm-4 control-label'>N° de sécurité sociale :</label>
+        <div class='col-sm-8'>
+            <input type='text' id='numss' name='numss' class='form-control' required />
+        </div>
+    </div>
+
+    <div class='form-group row'>
+        <div class='col-sm-12 text-right'>
+            <input type='submit' class='btn btn-success' value='Etape suivante' />
+        </div>
+    </div>
+
+</form>
+    
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 25%;">
+        1/4
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<p class='info'>
+    Nous avons détecté que vous avez notamment cotisé aux régimes de retraite suivants.
+    <br/>
+    Cliquez sur votre régime actuel.
+    <br/>
+    <br/>
+    Si votre régime actuel n'est pas dans cette liste, 
+    <br/>
+    cliquez sur le dernier auquel vous avez cotisé.
+</p>
+
+<form ng-submit='nextStep()'>
+
+    <div class='caisses-container'>
+
+        <div ng-repeat='caisse in caisses' class='caisse-container'>
+            <div class='caisse bg-info' ng-click='nextStep()'>
+                <div class='caisse-label'>{{caisse.nom}}</div>
+                <div class='caisse-description'>{{caisse.description}}</div>
+            </div>
+            <div ng-show='caisse.details' class='caisse-description'><a href='#' ng-click='showDetails=!showDetails'>Détails</a></div>
+            <div ng-show='showDetails' class='caisse-details'>
+                <ul>
+                    <li ng-repeat='detail in caisse.details'>{{detail}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class='form-group row'>
+        <div class='col-sm-12'>
+            <input ng-click='prevStep()' class='btn btn-success' value='Etape précédente' />
+        </div>
+    </div>
+
+</form>
+
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 50%;">
+        2/4
+    </div>
+</div>
